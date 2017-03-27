@@ -11,7 +11,11 @@ import UIKit
 class FSCalendarScopeExampleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FSCalendarDataSource, FSCalendarDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var calendar: FSCalendar!
+    @IBOutlet weak var calendar: FSCalendar! {
+        didSet {
+            calendar.appearance.borderDefaultColor = .red
+        }
+    }
     @IBOutlet weak var animationSwitch: UISwitch!
     
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
